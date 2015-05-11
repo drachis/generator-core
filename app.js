@@ -296,10 +296,12 @@
     }
     
     function init() {
+        test_p4();
+        test_p4oo();
         // Start async process to initialize generator
         setupGenerator().fail(
             function (err) {
-                stop(-3, "Generator failed to initialize: " + err);
+                stop(-3, "Generator faile d to initialize: " + err);
             });
     }
 
@@ -316,5 +318,22 @@
     });
 
     init();
+
+    function test_p4(){
+        var p4 = require("p4");
+        p4.run("info", function(err, stdout){
+            if (err) console.error(err.message);
+            console.log(stdout);
+        });
+    };
+
+    function test_p4oo(){
+        var P4 = require("p4-oo");
+        var p4 = new P4();
+        p4.statDir("c:\\Workspace\\p4\\toli_TOLI-PC_1883\\toli_TOLI-PC_1883\\myVEGAS\\Content\\Mobile\\Slots\\Casino\ Games\\MandalayBay\\scenes\\", function(err, stdout) {
+            if(err) console.error(err.message);
+            console.log(stdout);
+        });
+    }
 
 }());

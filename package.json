@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "optimist": "~0.6",
+    "p4": "0.0.6",
     "q": "~1.0",
     "semver": "~2.3",
     "ws": "git+https://github.com/adobe-photoshop/ws.git#v0.4.31-no-native"
